@@ -73,3 +73,6 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps)
   (App);
+
+  // All this is a lot of fun
+  
