@@ -1,4 +1,6 @@
 import React from 'react';
+
+// Connect function is used in order for header component to be able use the state from user and cart
 import { connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import './header.styles.scss';
@@ -41,10 +43,10 @@ const Header = ({ currentUser, hidden }) => (
     </div>
 );
 
+// This allows us to access the state
 const mapStateToProps = ({user: {currentUser}, cart: {hidden}}) => ({
     currentUser,
     hidden
 })
-
 
 export default connect(mapStateToProps)(Header);

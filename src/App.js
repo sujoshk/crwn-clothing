@@ -61,13 +61,22 @@ class App extends React.Component {
   }  
 }
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
-});
 
 const mapStateToProps = ({ user}) => ({
   currentUser: user.currentUser
+})
+
+const mapDispatchToProps = dispatch => ({
+
+  // Dispatch is a way for redux to know that whatever action is being passed to it, is going to be an action object that is going to be passed to every reducer.
+
+  // User would be the payload.
+  setCurrentUser: user => dispatch(setCurrentUser(user))
 });
+
+
+
+// Connect can take 1 or 2 arguments. The first is mapStateToProps which allows is to take state from other reducers, the second is mapDispatchToProps which 
 
 export default connect(
   mapStateToProps,
